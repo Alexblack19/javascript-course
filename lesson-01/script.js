@@ -16,8 +16,10 @@
 // Заміни вираз перевизначення комбінованим оператором `+=`.
 
 // let students = 100;
-
-//students = students + 50;
+// students = students + 50;
+// console.log(students);
+// students += 50;
+// console.log(students);
 // students *= 2;
 // console.log(students);
 
@@ -35,10 +37,10 @@
 // змінної `value`. Використовуй методи `Math.floor()`, `Math.ceil()` та
 //   `Math.round()`. Перевір що буде в консолі при значеннях `27.3` та `27.9`.
 
-// const value = 27.5;
-// console.log(Math.floor(value));
-// console.log(Math.ceil(value));
-// console.log(Math.round(value));
+// const value = 27.7;
+// console.log(Math.floor(value)); // заокруглення до меньшого цілого
+// console.log(Math.ceil(value)); // заокруглення до більшого цілого
+// console.log(Math.round(value)); // заокруглення по правилам математики
 
 //* ## Example 5 - Шаблонні рядки
 //
@@ -48,8 +50,8 @@
 // const companyName = 'Cyberdyne Systems';
 // const repairBots = 150;
 // const defenceBots = 50;
-// const message = companyName + ' has ' + (repairBots + defenceBots) + ' bots in stock';
-// const message = `${companyName} has ${repairBots + defenceBots} bots in stock`;
+// const message = companyName + ' has ' + (repairBots + defenceBots) + ' bots in stock'; // конкатенація
+// const message = `${companyName} has ${repairBots + defenceBots} bots in stock`; // шаблоний рядок
 // console.log(message); // "Cyberdyne Systems has 200 bots in stock"
 
 //* ## Example 6 - Методи рядків та чейнінг
@@ -64,20 +66,26 @@
 //
 //   Індекс маси тіла необхідно округлити до однієї цифри після коми;
 
-// let weight = '88,3';
-// let height = '1.75';
-// const newWeight = Number(weight.replace(',', '.'));
-// const newHeight = Number(height.replace(',', '.'));
+let weight = '88,3';
+let height = '1.75';
 
-// console.log(newHeight);
-// console.log(typeof Number(weight));
-// console.log(Number(weight));
-// console.log(Number.parseFloat(weight));
+console.log(weight); // 88,3
+console.log(typeof weight); // string
+console.log(height); // 1.75
+console.log(typeof height); // string
 
-// const bmi = newWeight / Math.pow(newHeight, 2);
-// console.log(bmi);
-// console.log(bmi.toFixed(1));
+const newWeight = Number(weight.replace(',', '.')); 
+const newHeight = Number(height.replace(',', '.')); 
+
+console.log(newWeight); // 88.3 // typeof => number
+console.log(newHeight); // 1.75 // typeof => number
+
+const bmi = Number((newWeight / Math.pow(newHeight, 2)).toFixed(2));
+console.log(bmi); // 28.832653061224487 // typeof => number
+// console.log(bmi.toFixed(1)); // 28.8 // typeof => string
 // console.log(bmi); // 28.8
+// або
+const bmi = Number((newWeight / Math.pow(newHeight, 2)).toFixed(2));
 
 //* ## Example 7 - Оператори порівняння та приведення типів
 //
